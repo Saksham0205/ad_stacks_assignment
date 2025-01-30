@@ -217,25 +217,27 @@ class DashboardScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: ListTile(
-        leading: Icon(
-          icon,
-          color: selected ? Colors.black87 : Colors.black54,
-          size: 22,
-        ),
-        title: Text(
-          title,
-          style: TextStyle(
-            color: selected ? Colors.black87 : Colors.black54,
-            fontSize: selected ? 17 : 15,
-            fontWeight: selected ? FontWeight.bold : FontWeight.w500,
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, color: selected ? Colors.black87 : Colors.black54, size: 22),
+            SizedBox(width: 8),
+            Text(
+              title,
+              style: TextStyle(
+                color: selected ? Colors.black87 : Colors.black54,
+                fontSize: selected ? 17 : 15,
+                fontWeight: selected ? FontWeight.bold : FontWeight.w500,
+              ),
+            ),
+          ],
         ),
         dense: true,
-        horizontalTitleGap: 8,
-        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       ),
     );
   }
+
 
   Widget _buildWorkspaceItem(String title, {bool expanded = false}) {
     return Column(
@@ -249,28 +251,34 @@ class DashboardScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                Center(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
+                SizedBox(width: 8),
                 Icon(Icons.add, size: 20, color: Colors.black87),
               ],
             ),
           ),
         ] else
           ListTile(
-            title: Text(
-              title,
-              style: TextStyle(
-                color: Colors.black54,
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
+            title: Center(
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
             trailing: Icon(
