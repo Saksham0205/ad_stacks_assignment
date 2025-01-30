@@ -238,7 +238,6 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-
   Widget _buildWorkspaceItem(String title, {bool expanded = false}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -292,6 +291,8 @@ class DashboardScreen extends StatelessWidget {
       ],
     );
   }
+
+
 
   Widget _buildTopRatingCard() {
     return Container(
